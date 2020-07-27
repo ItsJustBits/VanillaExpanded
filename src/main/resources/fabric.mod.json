@@ -1,16 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "vanilla_exp",
   "version": "${version}",
 
   "name": "Vanilla Expanded",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "ItsJustBits", "Azagwen", "TopDeadShot69"
+    "ItsJustBits",
+    "Azagwen",
+    "TopDeadShot69"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "",
+    "sources": ""
   },
 
   "license": "CC0-1.0",
@@ -23,7 +25,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "vanilla_exp.mixins.json"
   ],
 
   "depends": {
