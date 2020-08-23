@@ -18,10 +18,26 @@ public class VanillaExpMain implements ModInitializer {
 			.icon(() -> new ItemStack(VanExpBlocks.BASE_METAL_ORES[0]))
 			.build();
 
+	public static final ItemGroup VANEXP_ITEMS = FabricItemGroupBuilder.create(newID("items"))
+			.icon(() -> new ItemStack(VanExpBlocks.BASE_METAL_ORES[0]))
+			.build();
+
+	public static final ItemGroup VANEXP_TOOLS = FabricItemGroupBuilder.create(newID("tools"))
+			.icon(() -> new ItemStack(VanExpBlocks.BASE_METAL_ORES[0]))
+			.build();
+
+	public static final ItemGroup VANEXP_COMBAT = FabricItemGroupBuilder.create(newID("combat"))
+			.icon(() -> new ItemStack(VanExpBlocks.BASE_METAL_ORES[0]))
+			.build();
+
+
+	public static final VanExpWorldGen worldGen = new VanExpWorldGen();
+
 	@Override
 	public void onInitialize() {
 
 		VanExpBlocks.init();
+		worldGen.init();
 
 		System.out.println("Vanilla Expansion registered !");
 	}

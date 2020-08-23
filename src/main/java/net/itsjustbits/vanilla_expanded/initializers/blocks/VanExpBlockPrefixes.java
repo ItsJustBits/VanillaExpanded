@@ -1,6 +1,6 @@
 package net.itsjustbits.vanilla_expanded.initializers.blocks;
 
-public class BlockPrefixes {
+public class VanExpBlockPrefixes {
     private static final String underscore = "_";
 
     public static final String[] colors = {
@@ -37,7 +37,9 @@ public class BlockPrefixes {
             "copper" + underscore,
             "tin" + underscore,
             "bronze" + underscore,
-            "silver" + underscore
+            "silver" + underscore,
+            "lead" + underscore,
+            "nickel" + underscore
     };
 
     public static final String[] base_gem_ores = {
@@ -46,5 +48,11 @@ public class BlockPrefixes {
             "amethyst" + underscore,
             "peridot" + underscore,
             "saphire" + underscore
+    };
+
+    public static final String[] nether_metal_ores = {
+            "dark_iron" + underscore,
+            "ardite" + underscore,
+            "cobalt" + underscore
     };
 }
