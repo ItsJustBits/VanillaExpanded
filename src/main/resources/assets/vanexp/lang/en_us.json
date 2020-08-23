@@ -11,5 +11,11 @@
   "block.vanexp.ruby_ore": "Ruby Ore",
   "block.vanexp.amethyst_ore": "Amethyst Ore",
   "block.vanexp.peridot_ore": "Peridot Ore",
-  "block.vanexp.saphire_ore": "Saphire Ore"
+  "block.vanexp.saphire_ore": "Saphire Ore",
+
+  "_comment": "Misc",
+  "itemGroup.vanexp.blocks": "Vanilla Expanded Blocks",
+  "itemGroup.vanexp.items": "Vanilla Expanded Items",
+  "itemGroup.vanexp.tools": "Vanilla Expanded Tools",
+  "itemGroup.vanexp.combat": "Vanilla Expanded Combat"
 }
