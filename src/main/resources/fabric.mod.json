@@ -21,7 +21,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.itsjustbits.vanilla_expanded.VanillaExpMain"
+      "net.itsjustbits.vanilla_expanded.initializers.VanillaExpMain"
     ]
   },
   "mixins": [
