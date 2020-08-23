@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "vanexp:block/amethyst_ore"
+      "model": "vanexp:block/peridot_ore"
     }
   }
 }

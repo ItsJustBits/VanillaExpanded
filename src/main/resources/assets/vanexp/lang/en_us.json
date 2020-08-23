@@ -1,0 +1,15 @@
+{
+  "_comment": "Ore Blocks",
+  "block.vanexp.copper_ore": "Copper Ore",
+  "block.vanexp.tin_ore": "Tin Ore",
+  "block.vanexp.bronze_ore": "Bronze Ore",
+  "block.vanexp.silver_ore": "Silver Ore",
+  "block.vanexp.lead_ore": "Lead Ore",
+  "block.vanexp.nickel_ore": "Nickel Ore",
+
+  "block.vanexp.topaz_ore": "Topaz Ore",
+  "block.vanexp.ruby_ore": "Ruby Ore",
+  "block.vanexp.amethyst_ore": "Amethyst Ore",
+  "block.vanexp.peridot_ore": "Peridot Ore",
+  "block.vanexp.saphire_ore": "Saphire Ore"
+}

@@ -33,10 +33,12 @@ public class VanExpWorldGen {
 
     private void handleBiome(Biome biome) {
         if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
+            addOre(biome, 5, 1, 0, 0, 25, VanExpBlocks.BASE_METAL_ORES[3].getDefaultState());
             for (int i = 0; i< VanExpBlocks.BASE_METAL_ORES.length - 1; i++)
-                addOre(biome, 8, 5, 0, 0, 54, VanExpBlocks.BASE_METAL_ORES[i].getDefaultState());
+                if (i !=3)
+                    addOre(biome, 8, 3, 0, 0, 54, VanExpBlocks.BASE_METAL_ORES[i].getDefaultState());
             for (int i = 0; i< VanExpBlocks.BASE_GEM_ORES.length - 1; i++) {
-                addOre(biome, 8, 3, 0, 0, 25, VanExpBlocks.BASE_GEM_ORES[i].getDefaultState());
+                addOre(biome, 7, 1, 0, 0, 25, VanExpBlocks.BASE_GEM_ORES[i].getDefaultState());
             }
         }
     }
