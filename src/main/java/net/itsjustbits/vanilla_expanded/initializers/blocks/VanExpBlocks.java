@@ -30,11 +30,15 @@ public class VanExpBlocks {
 
     public static final Block[] BASE_METAL_ORES = MultiBlockMakers.makeMultiBlock(base_metal_ores.length, makeOre(1, 3.0F, 3.0F));
     public static final Block[] BASE_GEM_ORES = MultiBlockMakers.makeMultiBlock(base_gem_ores.length, makeOre(2, 3.0F, 3.0F));
-    public static final Block[] NETHER_METAL_ORES = MultiBlockMakers.makeMultiBlock(nether_metal_ores.length, makeOre(2, 3.0F, 3.0F));
+    public static final Block DARK_IRON_ORE = new Block(makeNetherOre(2, 3.0F, 3.0F));
+    public static final Block ARDITE = new Block(makeNetherOre(3, 3.0F, 6.0F));
+    public static final Block COBALT = new Block(makeNetherOre(3, 3.0F, 6.0F));
 
     public static void init() {
         registerMultiBlock("ore", BASE_METAL_ORES, base_metal_ores);
         registerMultiBlock("ore", BASE_GEM_ORES, base_gem_ores);
-        registerMultiBlock("ore", NETHER_METAL_ORES, nether_metal_ores);
+        registerBlock("dark_iron_ore", DARK_IRON_ORE);
+        registerBlock("ardite_ore", ARDITE);
+        registerBlock("cobalt_ore", COBALT);
     }
 }

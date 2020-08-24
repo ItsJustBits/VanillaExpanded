@@ -49,10 +49,4 @@ public class VanExpBlockPrefixes {
             "peridot" + underscore,
             "saphire" + underscore
     };
-
-    public static final String[] nether_metal_ores = {
-            "dark_iron" + underscore,
-            "ardite" + underscore,
-            "cobalt" + underscore
-    };
 }

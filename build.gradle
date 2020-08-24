@@ -55,6 +55,10 @@ jar {
 	from "LICENSE"
 }
 
+minecraft {
+	accessWidener "src/main/resources/${project.accesswideners}"
+}
+
 // configure the maven publication
 publishing {
 	publications {

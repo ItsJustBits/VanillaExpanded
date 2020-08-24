@@ -13,6 +13,18 @@
   "block.vanexp.peridot_ore": "Peridot Ore",
   "block.vanexp.saphire_ore": "Saphire Ore",
 
+  "block.vanexp.dark_iron_ore": "Dark Iron Ore",
+  "block.vanexp.ardite_ore": "Ardite Ore",
+  "block.vanexp.cobalt_ore": "Cobalt Ore",
+
+  "_comment": "Ingots & Nuggets",
+  "item.vanexp.copper_ingot": "Copper Ingot",
+  "item.vanexp.tin_ingot": "Tin Ingot",
+  "item.vanexp.bronze_ingot": "Bronze Ingot",
+  "item.vanexp.silver_ingot": "Silver Ingot",
+  "item.vanexp.lead_ingot": "Lead Ingot",
+  "item.vanexp.nickel_ingot": "Nickel Ingot",
+
   "_comment": "Misc",
   "itemGroup.vanexp.blocks": "Vanilla Expanded Blocks",
   "itemGroup.vanexp.items": "Vanilla Expanded Items",
