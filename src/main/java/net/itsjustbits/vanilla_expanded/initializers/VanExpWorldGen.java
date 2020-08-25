@@ -1,8 +1,8 @@
 package net.itsjustbits.vanilla_expanded.initializers;
 
-import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.itsjustbits.vanilla_expanded.initializers.blocks.VanExpBlocks;
+import net.itsjustbits.vanilla_expanded.world.gen.VanExpOreFeature;
 import net.itsjustbits.vanilla_expanded.world.gen.VanExpOreFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.registry.Registry;
@@ -12,19 +12,17 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 
-import static net.itsjustbits.vanilla_expanded.initializers.VanillaExpMain.newID;
-import static net.minecraft.world.gen.feature.OreFeatureConfig.*;
+import static net.itsjustbits.vanilla_expanded.initializers.VanillaExpMain.*;
 import static net.minecraft.world.gen.feature.OreFeatureConfig.Target.*;
-import static net.itsjustbits.vanilla_expanded.world.gen.VanExpOreFeatureConfig.Target.*;
+import static net.itsjustbits.vanilla_expanded.world.gen.VanExpOreFeatureConfig.GroundFillerBlock.*;
 
 public class VanExpWorldGen {
 
-    public static Feature<OreFeatureConfig> ORE;
+    public static Feature<VanExpOreFeatureConfig> ORE;
 
-    private static void addOre(Biome biome, Target target, int veinSize, int veinPerChunk, int bottomOffset, int minY, int maxY, BlockState oreBlock) {
+    private static void addOre(Biome biome, OreFeatureConfig.Target target, int veinSize, int veinPerChunk, int bottomOffset, int minY, int maxY, BlockState oreBlock) {
         biome.addFeature(
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 Feature.ORE.configure(
@@ -40,11 +38,11 @@ public class VanExpWorldGen {
                         ))));
     }
 
-    private static void addOre(Biome biome, VanExpOreFeatureConfig.Target target, int veinSize, int veinPerChunk, int bottomOffset, int minY, int maxY, BlockState oreBlock) {
+    private static void addOre(Biome biome, VanExpOreFeatureConfig.GroundFillerBlock target, int veinSize, int veinPerChunk, int bottomOffset, int minY, int maxY, BlockState oreBlock) {
         biome.addFeature(
                 GenerationStep.Feature.UNDERGROUND_ORES,
-                Feature.ORE.configure(
-                        new OreFeatureConfig(
+                ORE.configure(
+                        new VanExpOreFeatureConfig(
                                 target, oreBlock,
                                 veinSize //Ore vein size
                         )).createDecoratedFeature(
@@ -73,14 +71,33 @@ public class VanExpWorldGen {
         int arditeVeinSize = 4; //1
         int cobaltVeinSize = 4; //2
 
+        //Nether wastes
+        if (biome.equals(Biomes.NETHER_WASTES)) {
+            addOre(biome, NETHERRACK, arditeVeinSize, 6, 0, 20, 128, VanExpBlocks.ARDITE.getDefaultState());
+            addOre(biome, NETHERRACK, cobaltVeinSize, 6, 0, 20, 128, VanExpBlocks.COBALT.getDefaultState());
+        }
+
+        //Warped Fqorest
+        if (biome.equals(Biomes.WARPED_FOREST)) {
+            addOre(biome, WARPED_FOREST_REPLACEABLE, darkIronVeinSize, 10, 0, 0, 128, VanExpBlocks.DARK_IRON_ORE.getDefaultState());
+            addOre(biome, WARPED_FOREST_REPLACEABLE, arditeVeinSize, 8, 0, 20, 128, VanExpBlocks.ARDITE.getDefaultState());
+        }
+
         //Dark Iron
-        if (biome.equals(Biomes.WARPED_FOREST) || biome.equals(Biomes.SOUL_SAND_VALLEY)) {
-            addOre(biome, BLACKSTONE, darkIronVeinSize, 10, 0, 0, 128, VanExpBlocks.DARK_IRON_ORE.getDefaultState());
+        if (biome.equals(Biomes.WARPED_FOREST)) {
+            addOre(biome, NETHERRACK, darkIronVeinSize, 10, 0, 0, 128, VanExpBlocks.DARK_IRON_ORE.getDefaultState());
+        }
+        if (biome.equals(Biomes.SOUL_SAND_VALLEY)) {
+            addOre(biome, SOUL_SOIL, darkIronVeinSize + 4, 30, 0, 0, 128, VanExpBlocks.SOUL_SOIL_DARK_IRON_ORE.getDefaultState());
         }
 
         //Ardite
-        if (biome.equals(Biomes.WARPED_FOREST) || biome.equals(Biomes.NETHER_WASTES) || biome.equals(Biomes.BASALT_DELTAS)) {
-            addOre(biome, NETHER_ORE_REPLACEABLES, arditeVeinSize, 8, 0, 20, 128, VanExpBlocks.ARDITE.getDefaultState());
+        if (biome.equals(Biomes.WARPED_FOREST) || biome.equals(Biomes.NETHER_WASTES)) {
+            addOre(biome, NETHERRACK, arditeVeinSize, 8, 0, 20, 128, VanExpBlocks.ARDITE.getDefaultState());
+        }
+        if (biome.equals(Biomes.BASALT_DELTAS)) {
+            addOre(biome, BLACKSTONE, arditeVeinSize * 2, 30, 0, 20, 128, VanExpBlocks.BLACKSTONE_ARDITE.getDefaultState());
+            addOre(biome, BASALT, arditeVeinSize * 2, 24, 0, 20, 128, VanExpBlocks.BASALT_ARDITE.getDefaultState());
         }
 
         //Cobalt
@@ -90,6 +107,8 @@ public class VanExpWorldGen {
     }
 
     public void init() {
+
+        ORE = Registry.register(Registry.FEATURE, newID("ore"), new VanExpOreFeature(VanExpOreFeatureConfig.CODEC));
 
         Registry.BIOME.forEach(this::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));

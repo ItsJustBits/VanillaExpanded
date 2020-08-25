@@ -13,9 +13,11 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+//This code was copied from vanilla game and adapted for this mod's purpose, all credit goes to Mojang
+
 public class VanExpOreFeatureConfig implements FeatureConfig {
     public static final Codec<VanExpOreFeatureConfig> CODEC = RecordCodecBuilder.create((instance) -> {
-        return instance.group(VanExpOreFeatureConfig.Target.field_24898.fieldOf("target").forGetter((oreFeatureConfig) -> {
+        return instance.group(GroundFillerBlock.field_24898.fieldOf("target").forGetter((oreFeatureConfig) -> {
             return oreFeatureConfig.target;
         }), BlockState.CODEC.fieldOf("state").forGetter((oreFeatureConfig) -> {
             return oreFeatureConfig.state;
@@ -23,28 +25,36 @@ public class VanExpOreFeatureConfig implements FeatureConfig {
             return oreFeatureConfig.size;
         })).apply(instance, VanExpOreFeatureConfig::new);
     });
-    public final VanExpOreFeatureConfig.Target target;
+    public final GroundFillerBlock target;
     public final int size;
     public final BlockState state;
 
-    public VanExpOreFeatureConfig(VanExpOreFeatureConfig.Target target, BlockState state, int size) {
+    public VanExpOreFeatureConfig(GroundFillerBlock target, BlockState state, int size) {
         this.size = size;
         this.state = state;
         this.target = target;
     }
 
-    public static enum Target implements StringIdentifiable {
+    public static enum GroundFillerBlock implements StringIdentifiable {
         BLACKSTONE("blackstone", new BlockPredicate(Blocks.BLACKSTONE)),
-        SOUL_SOIL("soul_soil", new BlockPredicate(Blocks.SOUL_SOIL));
+        BASALT("basalt", new BlockPredicate(Blocks.BASALT)),
+        SOUL_SOIL("soul_soil", new BlockPredicate(Blocks.SOUL_SOIL)),
+        WARPED_FOREST_REPLACEABLE("warped_forest_replaceables", (blockState) -> {
+            if (blockState == null) {
+                return false;
+            } else {
+                return blockState.isOf(Blocks.NETHERRACK) || blockState.isOf(Blocks.WARPED_NYLIUM);
+            }
+        });
 
-        public static final Codec<VanExpOreFeatureConfig.Target> field_24898 = StringIdentifiable.method_28140(VanExpOreFeatureConfig.Target::values, VanExpOreFeatureConfig.Target::byName);
-        private static final Map<String, VanExpOreFeatureConfig.Target> nameMap = (Map)Arrays.stream(values()).collect(Collectors.toMap(VanExpOreFeatureConfig.Target::getName, (target) -> {
+        public static final Codec<GroundFillerBlock> field_24898 = StringIdentifiable.method_28140(GroundFillerBlock::values, GroundFillerBlock::byName);
+        private static final Map<String, GroundFillerBlock> nameMap = (Map)Arrays.stream(values()).collect(Collectors.toMap(GroundFillerBlock::getName, (target) -> {
             return target;
         }));
         private final String name;
         private final Predicate<BlockState> predicate;
 
-        private Target(String name, Predicate<BlockState> predicate) {
+        private GroundFillerBlock(String name, Predicate<BlockState> predicate) {
             this.name = name;
             this.predicate = predicate;
         }
@@ -53,8 +63,8 @@ public class VanExpOreFeatureConfig implements FeatureConfig {
             return this.name;
         }
 
-        public static VanExpOreFeatureConfig.Target byName(String name) {
-            return (VanExpOreFeatureConfig.Target)nameMap.get(name);
+        public static GroundFillerBlock byName(String name) {
+            return (GroundFillerBlock)nameMap.get(name);
         }
 
         public Predicate<BlockState> getCondition() {

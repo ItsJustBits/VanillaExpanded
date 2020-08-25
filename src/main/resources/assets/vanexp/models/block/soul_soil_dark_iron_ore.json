@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vanexp:block/soul_soil_dark_iron_ore"
+  }
+}

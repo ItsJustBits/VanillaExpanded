@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "vanexp:block/basalt_ardite_ore_side",
+    "bottom": "vanexp:block/basalt_ardite_ore_top",
+    "top": "vanexp:block/basalt_ardite_ore_top"
+  }
+}
