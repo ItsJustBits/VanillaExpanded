@@ -13,8 +13,8 @@
   "block.vanexp.peridot_ore": "Peridot Ore",
   "block.vanexp.saphire_ore": "Saphire Ore",
 
-  "block.vanexp.dark_iron_ore": "Dark Iron Ore",
-  "block.vanexp.soul_soil_dark_iron_ore": "Soul Soil Dark Iron Ore",
+  "block.vanexp.soul_iron_ore": "Soul Iron Ore",
+  "block.vanexp.soul_soil_soul_iron_ore": "Soul Soil Soul Iron Ore",
   "block.vanexp.ardite_ore": "Ardite Ore",
   "block.vanexp.blackstone_ardite_ore": "Blackstone Ardite Ore",
   "block.vanexp.basalt_ardite_ore": "Basalt Ardite Ore",
@@ -28,9 +28,13 @@
   "item.vanexp.lead_ingot": "Lead Ingot",
   "item.vanexp.nickel_ingot": "Nickel Ingot",
 
-  "item.vanexp.dark_iron_ingot": "Dark Iron Ingot",
+  "item.vanexp.soul_iron_ingot": "Soul Iron Ingot",
   "item.vanexp.ardite_ingot": "Ardite Ingot",
   "item.vanexp.cobalt_ingot": "Cobalt Ingot",
+
+  "item.vanexp.soul_iron_nugget": "Soul Iron Nugget",
+  "item.vanexp.ardite_nugget": "Ardite Nugget",
+  "item.vanexp.cobalt_nugget": "Cobalt Nugget",
 
   "_comment": "Misc",
   "itemGroup.vanexp.blocks": "Vanilla Expanded Blocks",

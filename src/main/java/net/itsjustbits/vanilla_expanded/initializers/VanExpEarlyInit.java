@@ -41,9 +41,9 @@ public class VanExpEarlyInit implements EarlyInitializer {
 
         if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
             for (int i = 0; i< VanExpBlocks.BASE_METAL_ORES.length - 1; i++)
-                addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_METAL_ORES[i].getDefaultState(), 8, 0, 0, 40, 15);
+                addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_METAL_ORES[i].getDefaultState(), 6, 0, 0, 42, 6);
             for (int i = 0; i< VanExpBlocks.BASE_GEM_ORES.length - 1; i++)
-                addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_GEM_ORES[i].getDefaultState(), 6, 0, 0, 28, 2);
+                addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_GEM_ORES[i].getDefaultState(), 4, 0, 0, 28, 1);
         }
 
         //Nether ores
@@ -59,24 +59,24 @@ public class VanExpEarlyInit implements EarlyInitializer {
 
         //Crimson Forest
         if (key.equals(BiomeKeys.CRIMSON_FOREST)) {
-            addOre(manager, biome, CRIMSON_FOREST_REPLACEABLE, VanExpBlocks.COBALT.getDefaultState(), cobaltVeinSize + 2, 10, 20, 128, 20);
+            addOre(manager, biome, CRIMSON_FOREST_REPLACEABLE, VanExpBlocks.COBALT.getDefaultState(), cobaltVeinSize + 2, 10, 20, 128, 15);
         }
 
         //Warped Forest
         if (key.equals(BiomeKeys.WARPED_FOREST)) {
-            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.DARK_IRON_ORE.getDefaultState(), darkIronVeinSize + 2, 10, 20, 128, 15);
-            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 20);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.SOUL_IRON_ORE.getDefaultState(), darkIronVeinSize + 2, 10, 20, 128, 15);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 15);
         }
 
         //Soul Sand Valley
         if (key.equals(BiomeKeys.SOUL_SAND_VALLEY)) {
-            addOre(manager, biome, SOUL_SOIL, VanExpBlocks.SOUL_SOIL_DARK_IRON_ORE.getDefaultState(), darkIronVeinSize + 4, 10, 20, 128, 20);
+            addOre(manager, biome, SOUL_SOIL, VanExpBlocks.SOUL_SOIL_SOUL_IRON_ORE.getDefaultState(), darkIronVeinSize + 4, 10, 20, 128, 20);
         }
 
         //Basalt Deltas
         if (key.equals(BiomeKeys.BASALT_DELTAS)) {
             addOre(manager, biome, BLACKSTONE, VanExpBlocks.BLACKSTONE_ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 20);
-            addOre(manager, biome, BASALT, VanExpBlocks.BASALT_ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 20);
+            addOre(manager, biome, BASALT, VanExpBlocks.BASALT_ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 15);
         }
     }
 

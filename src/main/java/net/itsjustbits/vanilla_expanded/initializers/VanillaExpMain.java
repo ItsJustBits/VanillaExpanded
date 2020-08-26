@@ -19,16 +19,12 @@ public class VanillaExpMain implements ModInitializer {
 			.build();
 
 	public static final ItemGroup VANEXP_ITEMS = FabricItemGroupBuilder.create(newID("items"))
-			.icon(() -> new ItemStack(null))
+			.icon(() -> new ItemStack(VanExpItems.COPPER_INGOT))
 			.build();
 
-	public static final ItemGroup VANEXP_TOOLS = FabricItemGroupBuilder.create(newID("tools"))
-			.icon(() -> new ItemStack(null))
-			.build();
+	//public static final ItemGroup VANEXP_TOOLS = FabricItemGroupBuilder.create(newID("tools")).icon(() -> new ItemStack(null)).build();
 
-	public static final ItemGroup VANEXP_COMBAT = FabricItemGroupBuilder.create(newID("combat"))
-			.icon(() -> new ItemStack(null))
-			.build();
+	//public static final ItemGroup VANEXP_COMBAT = FabricItemGroupBuilder.create(newID("combat")).icon(() -> new ItemStack(null)).build();
 
 	@Override
 	public void onInitialize() {

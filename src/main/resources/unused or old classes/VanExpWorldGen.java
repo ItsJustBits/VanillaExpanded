@@ -99,13 +99,13 @@ public class VanExpWorldGen {
 
         //Warped Forest
         if (biome.equals(BiomeKeys.WARPED_FOREST)) {
-            addOre(biome, WARPED_FOREST_REPLACEABLE, darkIronVeinSize, 10, 0, 0, 128, VanExpBlocks.DARK_IRON_ORE.getDefaultState());
+            addOre(biome, WARPED_FOREST_REPLACEABLE, darkIronVeinSize, 10, 0, 0, 128, VanExpBlocks.SOUL_IRON_ORE.getDefaultState());
             addOre(biome, WARPED_FOREST_REPLACEABLE, arditeVeinSize, 6, 0, 20, 128, VanExpBlocks.ARDITE.getDefaultState());
         }
 
         //Soul Sand Valley
         if (biome.equals(BiomeKeys.SOUL_SAND_VALLEY)) {
-            addOre(biome, SOUL_SOIL, darkIronVeinSize + 4, 30, 0, 0, 128, VanExpBlocks.SOUL_SOIL_DARK_IRON_ORE.getDefaultState());
+            addOre(biome, SOUL_SOIL, darkIronVeinSize + 4, 30, 0, 0, 128, VanExpBlocks.SOUL_SOIL_SOUL_IRON_ORE.getDefaultState());
         }
 
         //Basalt Deltas

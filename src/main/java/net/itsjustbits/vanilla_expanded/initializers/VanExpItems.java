@@ -14,7 +14,7 @@ public class VanExpItems {
     public static final Item SILVER_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item LEAD_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item NICKEL_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
-    public static final Item DARK_IRON_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
+    public static final Item SOUL_IRON_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item ARDITE_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item COBALT_INGOT = new Item(new Item.Settings().group(VANEXP_ITEMS));
 
@@ -24,7 +24,11 @@ public class VanExpItems {
     public static final Item SILVER_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item LEAD_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item NICKEL_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
-    public static final Item DARK_IRON_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
+
+    public static final Item SOUL_IRON_CHUNKLET = new Item(new Item.Settings().group(VANEXP_ITEMS));
+    public static final Item ARDITE_CHUNKLET = new Item(new Item.Settings().group(VANEXP_ITEMS));
+    public static final Item COBALT_CHUNKLET = new Item(new Item.Settings().group(VANEXP_ITEMS));
+    public static final Item SOUL_IRON_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item ARDITE_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
     public static final Item COBALT_NUGGET = new Item(new Item.Settings().group(VANEXP_ITEMS));
 
@@ -36,7 +40,7 @@ public class VanExpItems {
         Registry.register(Registry.ITEM, newID("silver_ingot"), SILVER_INGOT);
         Registry.register(Registry.ITEM, newID("lead_ingot"), LEAD_INGOT);
         Registry.register(Registry.ITEM, newID("nickel_ingot"), NICKEL_INGOT);
-        Registry.register(Registry.ITEM, newID("dark_iron_ingot"), DARK_IRON_INGOT);
+        Registry.register(Registry.ITEM, newID("soul_iron_ingot"), SOUL_IRON_INGOT);
         Registry.register(Registry.ITEM, newID("ardite_ingot"), ARDITE_INGOT);
         Registry.register(Registry.ITEM, newID("cobalt_ingot"), COBALT_INGOT);
 
@@ -48,7 +52,7 @@ public class VanExpItems {
         Registry.register(Registry.ITEM, newID("lead_nugget"), LEAD_NUGGET);
         Registry.register(Registry.ITEM, newID("nickel_nugget"), NICKEL_NUGGET);
          **/
-        Registry.register(Registry.ITEM, newID("dark_iron_nugget"), DARK_IRON_NUGGET);
+        Registry.register(Registry.ITEM, newID("soul_iron_nugget"), SOUL_IRON_NUGGET);
         Registry.register(Registry.ITEM, newID("ardite_nugget"), ARDITE_NUGGET);
         Registry.register(Registry.ITEM, newID("cobalt_nugget"), COBALT_NUGGET);
 
