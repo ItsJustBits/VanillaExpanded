@@ -22,22 +22,22 @@ public class VanExpBlocks {
     //3 = diamond
     //4 = netherite
 
-    private static AbstractBlock.Settings makeNetherOre(Tag<Item> tag, int miningLevel, float hardness, float resistance, BlockSoundGroup sound) {
-        return FabricBlockSettings.of(Material.STONE, MaterialColor.NETHER).breakByTool(tag, miningLevel).strength(hardness, resistance).sounds(sound);
+    private static FabricBlockSettings makeNetherOre(Material material, Tag<Item> tag, int miningLevel, float hardness, float resistance, BlockSoundGroup sound) {
+        return FabricBlockSettings.of(material, MaterialColor.NETHER).breakByHand(false).breakByTool(tag, miningLevel).strength(hardness, resistance).sounds(sound);
     }
 
-    private static AbstractBlock.Settings makeOre(int miningLevel, float hardness, float resistance) {
-        return FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).breakByTool(FabricToolTags.PICKAXES, miningLevel).strength(hardness, resistance).sounds(BlockSoundGroup.STONE);
+    private static FabricBlockSettings makeOre(int miningLevel, float hardness, float resistance) {
+        return FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, miningLevel).strength(hardness, resistance).sounds(BlockSoundGroup.STONE);
     }
 
     public static final Block[] BASE_METAL_ORES = MultiBlockMakers.makeMultiBlock(base_metal_ores.length, makeOre(1, 3.0F, 3.0F));
     public static final Block[] BASE_GEM_ORES = MultiBlockMakers.makeMultiBlock(base_gem_ores.length, makeOre(2, 3.0F, 3.0F));
-    public static final Block DARK_IRON_ORE = new Block(makeNetherOre(FabricToolTags.PICKAXES, 2, 3.0F, 3.0F, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block SOUL_SOIL_DARK_IRON_ORE = new Block(makeNetherOre(FabricToolTags.SHOVELS, 2, 3.0F, 3.0F, BlockSoundGroup.SOUL_SOIL));
-    public static final Block ARDITE = new Block(makeNetherOre(FabricToolTags.PICKAXES, 3, 3.0F, 6.0F, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block BLACKSTONE_ARDITE = new Block(makeNetherOre(FabricToolTags.PICKAXES, 3, 3.0F, 6.0F, BlockSoundGroup.GILDED_BLACKSTONE));
-    public static final Block BASALT_ARDITE = new Block(makeNetherOre(FabricToolTags.PICKAXES, 3, 3.0F, 6.0F, BlockSoundGroup.BASALT));
-    public static final Block COBALT = new Block(makeNetherOre(FabricToolTags.PICKAXES, 3, 3.0F, 6.0F, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block DARK_IRON_ORE = new Block(makeNetherOre(Material.STONE, FabricToolTags.PICKAXES, 2, 3.0F, 3.0F, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block SOUL_SOIL_DARK_IRON_ORE = new Block(makeNetherOre(Material.SOIL, FabricToolTags.SHOVELS, 2, 3.0F, 3.0F, BlockSoundGroup.SOUL_SOIL));
+    public static final Block ARDITE = new Block(makeNetherOre(Material.STONE, FabricToolTags.PICKAXES, 4, 3.0F, 6.0F, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block BLACKSTONE_ARDITE = new Block(makeNetherOre(Material.STONE, FabricToolTags.PICKAXES, 4, 3.0F, 6.0F, BlockSoundGroup.GILDED_BLACKSTONE));
+    public static final Block BASALT_ARDITE = new Block(makeNetherOre(Material.STONE, FabricToolTags.PICKAXES, 4, 3.0F, 6.0F, BlockSoundGroup.BASALT));
+    public static final Block COBALT = new Block(makeNetherOre(Material.STONE, FabricToolTags.PICKAXES, 4, 3.0F, 6.0F, BlockSoundGroup.NETHER_GOLD_ORE));
 
     public static void init() {
         registerMultiBlock("ore", BASE_METAL_ORES, base_metal_ores);

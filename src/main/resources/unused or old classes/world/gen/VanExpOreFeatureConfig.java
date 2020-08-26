@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 //This code was copied from vanilla game and adapted for this mod's purpose, all credit goes to Mojang
 
 public class VanExpOreFeatureConfig implements FeatureConfig {
+    /**
     public static final Codec<VanExpOreFeatureConfig> CODEC = RecordCodecBuilder.create((instance) -> {
         return instance.group(GroundFillerBlock.field_24898.fieldOf("target").forGetter((oreFeatureConfig) -> {
             return oreFeatureConfig.target;
@@ -39,6 +40,13 @@ public class VanExpOreFeatureConfig implements FeatureConfig {
         BLACKSTONE("blackstone", new BlockPredicate(Blocks.BLACKSTONE)),
         BASALT("basalt", new BlockPredicate(Blocks.BASALT)),
         SOUL_SOIL("soul_soil", new BlockPredicate(Blocks.SOUL_SOIL)),
+        CRIMSON_FOREST_REPLACEABLE("crimson_forest_replaceables", (blockState) -> {
+            if (blockState == null) {
+                return false;
+            } else {
+                return blockState.isOf(Blocks.NETHERRACK) || blockState.isOf(Blocks.CRIMSON_NYLIUM);
+            }
+        }),
         WARPED_FOREST_REPLACEABLE("warped_forest_replaceables", (blockState) -> {
             if (blockState == null) {
                 return false;
@@ -47,7 +55,7 @@ public class VanExpOreFeatureConfig implements FeatureConfig {
             }
         });
 
-        public static final Codec<GroundFillerBlock> field_24898 = StringIdentifiable.method_28140(GroundFillerBlock::values, GroundFillerBlock::byName);
+        public static final Codec<GroundFillerBlock> field_24898 = StringIdentifiable.createCodec(GroundFillerBlock::values, GroundFillerBlock::byName);
         private static final Map<String, GroundFillerBlock> nameMap = (Map)Arrays.stream(values()).collect(Collectors.toMap(GroundFillerBlock::getName, (target) -> {
             return target;
         }));
@@ -75,4 +83,5 @@ public class VanExpOreFeatureConfig implements FeatureConfig {
             return this.name;
         }
     }
+     **/
 }

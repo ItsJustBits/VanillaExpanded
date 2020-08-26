@@ -30,15 +30,11 @@ public class VanillaExpMain implements ModInitializer {
 			.icon(() -> new ItemStack(null))
 			.build();
 
-
-	public static final VanExpWorldGen VAN_EXP_WORLD_GEN = new VanExpWorldGen();
-
 	@Override
 	public void onInitialize() {
 
 		VanExpBlocks.init();
 		VanExpItems.init();
-		VAN_EXP_WORLD_GEN.init();
 
 		System.out.println("Vanilla Expansion registered !");
 	}

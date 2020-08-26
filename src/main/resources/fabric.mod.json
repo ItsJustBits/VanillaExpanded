@@ -22,6 +22,9 @@
   "entrypoints": {
     "main": [
       "net.itsjustbits.vanilla_expanded.initializers.VanillaExpMain"
+    ],
+    "cloth-early-init": [
+      "net.itsjustbits.vanilla_expanded.initializers.VanExpEarlyInit"
     ]
   },
   "mixins": [
