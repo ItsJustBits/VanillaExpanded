@@ -39,6 +39,7 @@ public class VanExpEarlyInit implements EarlyInitializer {
 
     private void handleBiome(DynamicRegistryManager manager, Biome biome, RegistryKey<Biome> key) {
 
+        //Overworld
         if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
             for (int i = 0; i< VanExpBlocks.BASE_METAL_ORES.length - 1; i++)
                 addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_METAL_ORES[i].getDefaultState(), 6, 0, 0, 42, 6);
@@ -46,37 +47,44 @@ public class VanExpEarlyInit implements EarlyInitializer {
                 addOre(manager, biome, BASE_STONE_OVERWORLD, VanExpBlocks.BASE_GEM_ORES[i].getDefaultState(), 4, 0, 0, 28, 1);
         }
 
-        //Nether ores
-        int darkIronVeinSize = 4;
-        int arditeVeinSize = 4;
-        int cobaltVeinSize = 4;
+        int wastesVeinSize = 2;
+        int wastesChunkFrequency = 4;
+        int forestVeinSize = 4;
+        int forestChunkFrequency = 10;
 
+        //Nether
         //Nether Wastes
         if (key.equals(BiomeKeys.NETHER_WASTES)) {
-            addOre(manager, biome, NETHERRACK, VanExpBlocks.ARDITE.getDefaultState(), arditeVeinSize - 1, 10, 20, 128, 5);
-            addOre(manager, biome, NETHERRACK, VanExpBlocks.COBALT.getDefaultState(), cobaltVeinSize - 1, 10, 20, 128, 5);
+            addOre(manager, biome, NETHERRACK, VanExpBlocks.ARDITE_ORE.getDefaultState(), wastesVeinSize, 10, 20, 128, wastesChunkFrequency);
+            addOre(manager, biome, NETHERRACK, VanExpBlocks.COBALT_ORE.getDefaultState(), wastesVeinSize, 10, 20, 128, wastesChunkFrequency);
+            addOre(manager, biome, NETHERRACK, VanExpBlocks.PLATINUM_ORE.getDefaultState(), wastesVeinSize, 10, 20, 128, wastesChunkFrequency);
         }
 
         //Crimson Forest
         if (key.equals(BiomeKeys.CRIMSON_FOREST)) {
-            addOre(manager, biome, CRIMSON_FOREST_REPLACEABLE, VanExpBlocks.COBALT.getDefaultState(), cobaltVeinSize + 2, 10, 20, 128, 15);
+            addOre(manager, biome, CRIMSON_FOREST_REPLACEABLE, VanExpBlocks.COBALT_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.PLATINUM_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.MALACHITE_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
         }
 
         //Warped Forest
         if (key.equals(BiomeKeys.WARPED_FOREST)) {
-            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.SOUL_IRON_ORE.getDefaultState(), darkIronVeinSize + 2, 10, 20, 128, 15);
-            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 15);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.SOUL_IRON_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.ARDITE_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
+            addOre(manager, biome, WARPED_FOREST_REPLACEABLE, VanExpBlocks.PLATINUM_ORE.getDefaultState(), forestVeinSize, 10, 20, 128, forestChunkFrequency);
         }
 
         //Soul Sand Valley
         if (key.equals(BiomeKeys.SOUL_SAND_VALLEY)) {
-            addOre(manager, biome, SOUL_SOIL, VanExpBlocks.SOUL_SOIL_SOUL_IRON_ORE.getDefaultState(), darkIronVeinSize + 4, 10, 20, 128, 20);
+            addOre(manager, biome, SOUL_SOIL, VanExpBlocks.SOUL_SOIL_SOUL_IRON_ORE.getDefaultState(), 8, 10, 20, 128, 20);
+            addOre(manager, biome, SOUL_SOIL, VanExpBlocks.SOUL_SOIL_SULFUR_ORE.getDefaultState(), 4, 10, 20, 128, 10);
         }
 
         //Basalt Deltas
         if (key.equals(BiomeKeys.BASALT_DELTAS)) {
-            addOre(manager, biome, BLACKSTONE, VanExpBlocks.BLACKSTONE_ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 20);
-            addOre(manager, biome, BASALT, VanExpBlocks.BASALT_ARDITE.getDefaultState(), arditeVeinSize + 2, 10, 20, 128, 15);
+            addOre(manager, biome, BLACKSTONE, VanExpBlocks.BLACKSTONE_ARDITE_ORE.getDefaultState(), 6, 10, 20, 128, 20);
+            addOre(manager, biome, BASALT, VanExpBlocks.BASALT_ARDITE_ORE.getDefaultState(), 6, 10, 20, 128, 15);
+            addOre(manager, biome, BLACKSTONE, VanExpBlocks.BLACKSTONE_SULFUR_ORE.getDefaultState(), 6, 10, 20, 128, 10);
         }
     }
 

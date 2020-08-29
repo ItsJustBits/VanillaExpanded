@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "soul_iron_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vanexp:soul_iron_nugget"
+    }
+  },
+  "result": {
+    "item": "vanexp:soul_iron_ingot"
+  }
+}

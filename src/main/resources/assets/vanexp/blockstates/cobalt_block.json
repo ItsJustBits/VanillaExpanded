@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "vanexp:block/cobalt_block"
+    }
+  }
+}

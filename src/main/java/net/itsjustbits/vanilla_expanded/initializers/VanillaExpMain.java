@@ -14,17 +14,10 @@ public class VanillaExpMain implements ModInitializer {
 		return new Identifier(nameSpace, path);
 	}
 
-	public static final ItemGroup VANEXP_BLOCKS = FabricItemGroupBuilder.create(newID("blocks"))
-			.icon(() -> new ItemStack(VanExpBlocks.BASE_METAL_ORES[0]))
-			.build();
-
-	public static final ItemGroup VANEXP_ITEMS = FabricItemGroupBuilder.create(newID("items"))
-			.icon(() -> new ItemStack(VanExpItems.COPPER_INGOT))
-			.build();
-
+	public static final ItemGroup VANEXP_BLOCKS = FabricItemGroupBuilder.create(newID("blocks")).icon(() -> new ItemStack(VanExpBlocks.COPPER_ORE)).build();
+	public static final ItemGroup VANEXP_ITEMS = FabricItemGroupBuilder.create(newID("items")).icon(() -> new ItemStack(VanExpItems.COPPER_INGOT)).build();
 	//public static final ItemGroup VANEXP_TOOLS = FabricItemGroupBuilder.create(newID("tools")).icon(() -> new ItemStack(null)).build();
-
-	//public static final ItemGroup VANEXP_COMBAT = FabricItemGroupBuilder.create(newID("combat")).icon(() -> new ItemStack(null)).build();
+	public static final ItemGroup VANEXP_COMBAT = FabricItemGroupBuilder.create(newID("combat")).icon(() -> new ItemStack(VanExpItems.COPPER_CHESTPLATE)).build();
 
 	@Override
 	public void onInitialize() {
@@ -32,6 +25,6 @@ public class VanillaExpMain implements ModInitializer {
 		VanExpBlocks.init();
 		VanExpItems.init();
 
-		System.out.println("Vanilla Expansion registered !");
+		System.out.println("Vanilla Expanded registered !");
 	}
 }

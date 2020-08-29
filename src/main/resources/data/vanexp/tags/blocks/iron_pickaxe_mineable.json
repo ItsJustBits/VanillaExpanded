@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+
+    "minecraft:diamond_block",
+    "minecraft:diamond_ore",
+    "minecraft:emerald_ore",
+    "minecraft:emerald_block",
+    "minecraft:gold_block",
+    "minecraft:gold_ore",
+    "minecraft:redstone_ore",
+
+    "vanexp:ruby_ore",
+    "vanexp:topaz_ore",
+    "vanexp:peridot_ore",
+    "vanexp:sapphire_ore",
+    "vanexp:amethyst_ore",
+
+    "vanexp:bronze_ore",
+    "vanexp:nickel_ore",
+    "vanexp:lead_ore"
+  ]
+}

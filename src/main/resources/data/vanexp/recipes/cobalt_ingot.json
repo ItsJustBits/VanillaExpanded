@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "vanexp:cobalt_chunk"
+  },
+  "addition": {
+    "item": "vanexp:soul_iron_ingot"
+  },
+  "result": {
+    "item": "vanexp:cobalt_ingot"
+  }
+}

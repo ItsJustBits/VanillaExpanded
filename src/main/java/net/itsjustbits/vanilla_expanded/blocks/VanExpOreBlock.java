@@ -21,38 +21,37 @@ import java.util.Random;
 
 import static net.itsjustbits.vanilla_expanded.initializers.VanillaExpMain.newID;
 
-public class VanExpOreBlock extends Block {
+public class VanExpOreBlock extends VanExpBlock {
     private int minExp;
     private int maxExp;
-    private final int minExpFinal;
-    private final int maxExpFinal;
-    private final Tag<Item> matchingTool;
-    private final Block effectivityCopy;
+    //private final int minExpFinal;
+    //private final int maxExpFinal;
+    //private final Tag<Item> matchingTool;
+    //private final Block effectivityCopy;
 
-    public VanExpOreBlock(int minExp, int maxExp, Tag<Item> matchingTool, Block effectivityCopy, Settings settings) {
+    public VanExpOreBlock(int minExp, int maxExp, Settings settings) {
         super(settings);
-        this.minExpFinal = minExp;
-        this.maxExpFinal = maxExp;
-        this.matchingTool = matchingTool;
-        this.effectivityCopy = effectivityCopy;
+        this.minExp = minExp;
+        this.maxExp = maxExp;
+        //this.matchingTool = matchingTool;
+        //this.effectivityCopy = effectivityCopy;
     }
 
+    /**
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (player.getMainHandStack().getItem().isIn(matchingTool) && player.getMainHandStack().isEffectiveOn(effectivityCopy.getDefaultState())) {
-            this.lootTableId = null;
             this.minExp = minExpFinal;
             this.maxExp = maxExpFinal;
-            player.getMainHandStack().getMiningSpeedMultiplier(state);
         }
         else {
-            this.lootTableId = newID("null_table");
             this.minExp = 0;
             this.maxExp = 0;
         }
 
         super.onBreak(world, pos, state, player);
     }
+    **/
 
     protected int getExperienceWhenMined(Random random) {
         return MathHelper.nextInt(random, minExp, maxExp);

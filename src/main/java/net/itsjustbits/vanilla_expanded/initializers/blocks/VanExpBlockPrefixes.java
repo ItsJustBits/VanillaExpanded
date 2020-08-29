@@ -47,6 +47,6 @@ public class VanExpBlockPrefixes {
             "ruby" + underscore,
             "amethyst" + underscore,
             "peridot" + underscore,
-            "saphire" + underscore
+            "sapphire" + underscore
     };
 }

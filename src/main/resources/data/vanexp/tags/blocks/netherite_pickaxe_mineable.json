@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vanexp:ardite_ore",
+    "vanexp:blackstone_ardite_ore",
+    "vanexp:basalt_ardite_ore",
+    "vanexp:cobalt_ore"
+  ]
+}

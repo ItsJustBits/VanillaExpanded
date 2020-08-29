@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "vanexp:soul_soil_dark_iron_ore"
+              "name": "vanexp:soul_soil_soul_iron_ore"
             },
             {
               "type": "minecraft:item",
@@ -46,7 +46,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "vanexp:dark_iron_nugget"
+              "name": "vanexp:soul_iron_nugget"
             }
           ]
         }

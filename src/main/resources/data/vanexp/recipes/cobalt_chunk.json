@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chunks",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vanexp:cobalt_nugget"
+    }
+  },
+  "result": {
+    "item": "vanexp:cobalt_chunk"
+  }
+}

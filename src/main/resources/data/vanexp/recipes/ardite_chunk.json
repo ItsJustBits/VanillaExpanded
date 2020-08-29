@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chunks",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vanexp:ardite_nugget"
+    }
+  },
+  "result": {
+    "item": "vanexp:ardite_chunk"
+  }
+}
