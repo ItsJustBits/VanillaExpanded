@@ -51,16 +51,37 @@ public class VanExpBlocks {
     public static final Block SAPPHIRE_ORE = new VanExpOreBlock( 3, 7, makeOre(3.0F, 3.0F, FabricToolTags.PICKAXES, 2));
 
     //Nether ores
-    public static final Block SOUL_IRON_ORE = new VanExpOreBlock( 3, 7, makeNetherOre(Material.STONE, 3.0F, 3.0F, FabricToolTags.PICKAXES, 3, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block SOUL_SOIL_SOUL_IRON_ORE = new VanExpOreBlock( 3, 7, makeNetherOre(Material.SOIL, 0.5F, FabricToolTags.SHOVELS, 3, BlockSoundGroup.SOUL_SOIL));
-    public static final Block ARDITE_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block BLACKSTONE_ARDITE_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.GILDED_BLACKSTONE));
-    public static final Block BASALT_ARDITE_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.BASALT));
     public static final Block COBALT_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block PLATINUM_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.NETHER_GOLD_ORE));
     public static final Block MALACHITE_ORE = new VanExpOreBlock(3, 7, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 2, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block SOUL_SOIL_SULFUR_ORE = new VanExpOreBlock(2, 6, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 2, BlockSoundGroup.NETHER_GOLD_ORE));
-    public static final Block BLACKSTONE_SULFUR_ORE = new VanExpOreBlock(2, 6, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 2, BlockSoundGroup.NETHER_GOLD_ORE));
+
+    //Multi Variant Ores
+    public static final Block BLACKSTONE_ARDITE_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.GILDED_BLACKSTONE));
+
+    public static final Block SOIL_SULFUR_ORE = new VanExpOreBlock(2, 6, makeNetherOre(Material.SOIL, 0.5F, FabricToolTags.SHOVELS, 2, BlockSoundGroup.SOUL_SOIL));
+    public static final Block SOIL_SOUL_IRON_ORE = new VanExpOreBlock( 3, 7, makeNetherOre(Material.SOIL, 1.0F, FabricToolTags.SHOVELS, 3, BlockSoundGroup.SOUL_SOIL));
+    public static final Block SOIL_PLATINUM_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.SOIL, 1.5F, FabricToolTags.SHOVELS, 4, BlockSoundGroup.SOUL_SOIL));
+
+    public static final Block SULFUR_ORE = new VanExpOreBlock(2, 6, makeNetherOre(Material.STONE, 3.0F, 3.0F, FabricToolTags.PICKAXES, 2, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block SOUL_IRON_ORE = new VanExpOreBlock( 3, 7, makeNetherOre(Material.STONE, 3.0F, 3.0F, FabricToolTags.PICKAXES, 3, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block ARDITE_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 6.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.NETHER_GOLD_ORE));
+    public static final Block PLATINUM_ORE = new VanExpOreBlock(4, 9, makeNetherOre(Material.STONE, 3.0F, 3.0F, FabricToolTags.PICKAXES, 4, BlockSoundGroup.NETHER_GOLD_ORE));
+
+    public static final Block[] SULFUR_ORES = {
+            SOIL_SULFUR_ORE,
+            SULFUR_ORE
+    };
+    public static final Block[] SOUL_IRON_ORES = {
+            SOIL_SOUL_IRON_ORE,
+            SOUL_IRON_ORE
+    };
+    public static final Block[] ARDITE_ORES = {
+            BLACKSTONE_ARDITE_ORE,
+            ARDITE_ORE
+    };
+    public static final Block[] PLATINUM_ORES = {
+            SOIL_PLATINUM_ORE,
+            PLATINUM_ORE
+    };
 
     //Ore Blocks
     public static final Block SOUL_IRON_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.BROWN).requiresTool().breakByTool(FabricToolTags.PICKAXES, 3).strength(25.0F, 600.0F).sounds(BlockSoundGroup.NETHERITE));
@@ -82,33 +103,33 @@ public class VanExpBlocks {
         BASE_GEM_ORES[3] = SAPPHIRE_ORE;
         BASE_GEM_ORES[4] = AMETHYST_ORE;
 
-        registerBlock("copper_ore", COPPER_ORE);
-        registerBlock("tin_ore", TIN_ORE);
-        registerBlock("silver_ore", SILVER_ORE);
-        registerBlock("bronze_ore", BRONZE_ORE);
-        registerBlock("nickel_ore", NICKEL_ORE);
-        registerBlock("lead_ore", LEAD_ORE);
+        registerBlock("copper_ore", COPPER_ORE, true);
+        registerBlock("tin_ore", TIN_ORE, true);
+        registerBlock("silver_ore", SILVER_ORE, true);
+        registerBlock("bronze_ore", BRONZE_ORE, true);
+        registerBlock("nickel_ore", NICKEL_ORE, true);
+        registerBlock("lead_ore", LEAD_ORE, true);
 
-        registerBlock("ruby_ore", RUBY_ORE);
-        registerBlock("topaz_ore", TOPAZ_ORE);
-        registerBlock("peridot_ore", PERIDOT_ORE);
-        registerBlock("sapphire_ore", SAPPHIRE_ORE);
-        registerBlock("amethyst_ore", AMETHYST_ORE);
+        registerBlock("ruby_ore", RUBY_ORE,true);
+        registerBlock("topaz_ore", TOPAZ_ORE,true);
+        registerBlock("peridot_ore", PERIDOT_ORE,true);
+        registerBlock("sapphire_ore", SAPPHIRE_ORE,true);
+        registerBlock("amethyst_ore", AMETHYST_ORE,true);
 
-        registerBlock("malachite_ore", MALACHITE_ORE);
-        registerBlock("soul_iron_ore", SOUL_IRON_ORE);
-        registerBlock("ardite_ore", ARDITE_ORE);
-        registerBlock("cobalt_ore", COBALT_ORE);
-        registerBlock("platinum_ore", PLATINUM_ORE);
-        registerBlock("soul_soil_sulfur_ore", SOUL_SOIL_SULFUR_ORE);
-        registerBlock("soul_soil_soul_iron_ore", SOUL_SOIL_SOUL_IRON_ORE);
-        registerBlock("blackstone_sulfur_ore", BLACKSTONE_SULFUR_ORE);
-        registerBlock("blackstone_ardite_ore", BLACKSTONE_ARDITE_ORE);
-        registerBlock("basalt_ardite_ore", BASALT_ARDITE_ORE);
+        registerBlock("malachite_ore", MALACHITE_ORE,true);
+        registerBlock("sulfur_ore", SULFUR_ORES[1],true);
+        registerBlock("soul_iron_ore", SOUL_IRON_ORES[1],true);
+        registerBlock("ardite_ore", ARDITE_ORES[1],true);
+        registerBlock("cobalt_ore", COBALT_ORE,true);
+        registerBlock("platinum_ore", PLATINUM_ORES[1],true);
+        registerBlock("soul_soil_sulfur_ore", SULFUR_ORES[0],true);
+        registerBlock("soul_soil_soul_iron_ore", SOUL_IRON_ORES[0],true);
+        registerBlock("soul_soil_platinum_ore", PLATINUM_ORES[0],true);
+        registerBlock("blackstone_ardite_ore", ARDITE_ORES[0],true);
 
-        registerBlock("soul_iron_block", SOUL_IRON_BLOCK);
-        registerBlock("ardite_block", ARDITE_BLOCK);
-        registerBlock("cobalt_block", COBALT_BLOCK);
-        registerBlock("platinum_block", PLATINUM_BLOCK);
+        registerBlock("soul_iron_block", SOUL_IRON_BLOCK,true);
+        registerBlock("ardite_block", ARDITE_BLOCK,true);
+        registerBlock("cobalt_block", COBALT_BLOCK,true);
+        registerBlock("platinum_block", PLATINUM_BLOCK,true);
     }
 }

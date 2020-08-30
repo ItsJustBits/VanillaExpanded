@@ -13,13 +13,20 @@
   "block.vanexp.sapphire_ore": "Sapphire Ore",
   "block.vanexp.amethyst_ore": "Amethyst Ore",
 
+  "block.vanexp.malachite_ore": "Malachite Ore",
+  "block.vanexp.sulfur_ore": "Sulfur Ore",
   "block.vanexp.soul_iron_ore": "Soul Iron Ore",
-  "block.vanexp.soul_soil_soul_iron_ore": "Soul Soil Soul Iron Ore",
   "block.vanexp.ardite_ore": "Ardite Ore",
-  "block.vanexp.blackstone_ardite_ore": "Blackstone Ardite Ore",
-  "block.vanexp.basalt_ardite_ore": "Basalt Ardite Ore",
   "block.vanexp.cobalt_ore": "Cobalt Ore",
   "block.vanexp.platinum_ore": "Platinum Ore",
+
+  "block.vanexp.soul_soil_malachite_ore": "Malachite Ore",
+  "block.vanexp.soul_soil_sulfur_ore": "Sulfur Ore",
+  "block.vanexp.soul_soil_soul_iron_ore": "Soul Iron Ore",
+  "block.vanexp.soul_soil_platinum_ore": "Platinum Ore",
+
+  "block.vanexp.blackstone_ardite_ore": "Ardite Ore",
+  "block.vanexp.basalt_ardite_ore": "Ardite Ore",
 
   "_comment": "Ore Blocks",
   "block.vanexp.soul_iron_block": "Soul Iron Block",

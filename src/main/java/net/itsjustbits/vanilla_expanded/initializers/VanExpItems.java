@@ -66,10 +66,10 @@ public class VanExpItems {
     public static final Item COBALT_LEGGINGS = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.LEGS, (new Item.Settings().group(VANEXP_COMBAT)));
     public static final Item COBALT_BOOTS = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.FEET, (new Item.Settings().group(VANEXP_COMBAT)));
 
-    public static final Item PLATINUM_HELMET = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.HEAD, (new Item.Settings().group(VANEXP_COMBAT)));
-    public static final Item PLATINUM_CHESTPLATE = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.CHEST, (new Item.Settings().group(VANEXP_COMBAT)));
-    public static final Item PLATINUM_LEGGINGS = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.LEGS, (new Item.Settings().group(VANEXP_COMBAT)));
-    public static final Item PLATINUM_BOOTS = new ArmorItem(VanExpArmorMaterial.COBALT, EquipmentSlot.FEET, (new Item.Settings().group(VANEXP_COMBAT)));
+    public static final Item PLATINUM_HELMET = new ArmorItem(VanExpArmorMaterial.PLATINUM, EquipmentSlot.HEAD, (new Item.Settings().group(VANEXP_COMBAT)));
+    public static final Item PLATINUM_CHESTPLATE = new ArmorItem(VanExpArmorMaterial.PLATINUM, EquipmentSlot.CHEST, (new Item.Settings().group(VANEXP_COMBAT)));
+    public static final Item PLATINUM_LEGGINGS = new ArmorItem(VanExpArmorMaterial.PLATINUM, EquipmentSlot.LEGS, (new Item.Settings().group(VANEXP_COMBAT)));
+    public static final Item PLATINUM_BOOTS = new ArmorItem(VanExpArmorMaterial.PLATINUM, EquipmentSlot.FEET, (new Item.Settings().group(VANEXP_COMBAT)));
 
 
     public static final Item[] COPPER_ARMOR = {

@@ -24,6 +24,9 @@ public enum  VanExpArmorMaterial implements ArmorMaterial {
     }),
     COBALT("cobalt", 42, new int[]{4, 7, 9, 4}, 18, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.1F, () -> {
         return Ingredient.ofItems(VanExpItems.COBALT_INGOT);
+    }),
+    PLATINUM("platinum", 42, new int[]{4, 7, 9, 4}, 18, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.1F, () -> {
+        return Ingredient.ofItems(VanExpItems.COBALT_INGOT);
     });
 
     private static final int[] baseDurability = {13, 15, 16, 11};

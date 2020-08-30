@@ -26,9 +26,9 @@ public class VanExpBlockUtils {
         return colors;
     }
 
-    public static void registerBlock(String name, Block block) {
+    public static void registerBlock(String name, Block block, boolean inGroup) {
         Registry.register(Registry.BLOCK, new Identifier(nameSpace, name), block);
-        Registry.register(Registry.ITEM, new Identifier(nameSpace, name), new BlockItem(block, new Item.Settings().group(blockGroup)));
+        Registry.register(Registry.ITEM, new Identifier(nameSpace, name), new BlockItem(block, new Item.Settings().group(inGroup ? blockGroup : null)));
     }
 
     public static void registerMultiBlock(String name, Block[] block, String[] variantType) {
